@@ -169,7 +169,7 @@ class Whisper():
         return out
 
 if __name__ == '__main__':
-    filename_in, filename_out = "test.wav", "test_out.wav"
+    filename_in, filename_out = "wav/japanese_in.wav", "wav/japanese_out.wav"
     lpcorder = 28
     whisper = Whisper(lpcorder)
     out = whisper.whisper_main(filename_in)
