@@ -169,8 +169,8 @@ class Whisper():
         return out
 
 if __name__ == '__main__':
-    filename = r"C:\Users\10001223307\work\test.wav"
+    filename_in, filename_out = "test.wav", "test_out.wav"
     lpcorder = 28
     whisper = Whisper(lpcorder)
-    out = whisper.whisper_main(filename)
-    librosa.output.write_wav(r"C:\Users\10001223307\work\test_out.wav",out,fs)
+    out = whisper.whisper_main(filename_in)
+    librosa.output.write_wav(filename_out,out,fs)
