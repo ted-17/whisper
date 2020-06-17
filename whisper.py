@@ -2,13 +2,12 @@
 """
 Created on Fri May 22 18:45:27 2020
 
-@author: 10001223307
+@author: Ted
 """
 
 import librosa
 from scipy import signal
 import numpy as np
-import joblib
 
 winlens = .064  # window length in seconds
 fs = 16000  # frequency downsampled to
@@ -160,11 +159,10 @@ class Whisper():
         # filtering to emphasize voiceband
         b,a = signal.butter(7, np.array((500, 6000))/(fs/2), btype='bandpass')
         out = signal.lfilter(b,a, plwin)
-        joblib.dump(lpc_arr, 'lpc_arr_happy.joblib')
         return out
 
 if __name__ == '__main__':
-    filename_in, filename_out = "wav/sad_female.wav", "wav/sad_female_out.wav"
+    filename_in, filename_out = "wav/english_in.wav", "wav/english_out.wav"
     lpcorder = 28
     whisper = Whisper(lpcorder)
     out = whisper.whisper_main(filename_in)
