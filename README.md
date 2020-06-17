@@ -1,6 +1,6 @@
-# whisper
+# whisper Conversion
 
-## Convert the voice into whisper, using LPC analysis
+## -Convert the voice into whisper, using LPC analysis-
 
 ### 1. Vocal Tract Estimation
 Assuming that speech signal is the combination of vocal cords and vocal tract.
